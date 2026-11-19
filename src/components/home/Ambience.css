@@ -1,179 +1,130 @@
-
 /* =========================================
-   THE SMOKE HAUZ
-   AMBIENCE — FULL IMAGE DISPLAY
-   NO CROPPING
+   THE SMOKE HAUZ — AMBIENCE SECTION
+   Chhote, perfect box wale image cards
 ========================================= */
 
-/* MOSAIC GRID */
 .ambience__mosaic {
+  --row-h: 190px;                       /* card ki height yahan se badlo */
+
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: 240px;
-  gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: var(--row-h);
+  grid-auto-flow: dense;
+  gap: 14px;
+
+  max-width: 1000px;                    /* poori width nahi, chhota size */
+  margin: 36px auto 0;
 }
 
-/* IMAGE TILE */
+/* ---------- TILE (box) ---------- */
 .ambience__tile {
   position: relative;
-
-  min-width: 0;
-  min-height: 0;
-
   margin: 0;
-
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-
+  min-width: 0;
   overflow: hidden;
-  cursor: pointer;
+  isolation: isolate;
 
-  background: #100d0b;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid var(--line, rgba(255, 255, 255, .12));
+  background: var(--ink, #0b0908);
+  box-shadow: 0 14px 30px -18px rgba(0, 0, 0, .85);
 }
 
-/* BIG TILE */
-.ambience__tile.big {
-  grid-column: span 2;
-  grid-row: span 2;
-}
+/* Layout: big = 2x2, tall = 1 col x 2 rows, baaki 1x1 */
+.ambience__tile.big  { grid-column: span 2; grid-row: span 2; }
+.ambience__tile.tall { grid-row: span 2; }
 
-/* TALL TILE */
-.ambience__tile.tall {
-  grid-row: span 2;
-}
-
-/* =========================================
-   FULL IMAGE — NO CROP
-========================================= */
-
+/* ---------- IMAGE ---------- */
 .ambience__tile img {
+  position: absolute;
+  inset: 0;
   display: block;
-
   width: 100%;
   height: 100%;
 
-  min-width: 0;
-  min-height: 0;
+  object-fit: cover;                    /* box poora bharega, stretch nahi hoga */
+  object-position: center;
 
-  object-fit: contain;
-  object-position: center center;
-
-  padding: 8px;
-
-  transition:
-    transform 0.6s ease,
-    filter 0.6s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform .6s ease;
 }
 
-/* HOVER EFFECT */
-.ambience__tile:hover img {
-  transform: scale(1.03);
-  filter: brightness(1.08);
+@media (hover: hover) {
+  .ambience__tile:hover img { transform: scale(1.06); }
 }
 
-/* =========================================
-   IMAGE CAPTION
-========================================= */
-
+/* ---------- CAPTION ---------- */
 .ambience__tile figcaption {
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: 0;
-
-  padding: 40px 18px 16px;
-
-  background:
-    linear-gradient(
-      0deg,
-      rgba(11, 9, 8, 0.95),
-      rgba(11, 9, 8, 0.65) 55%,
-      transparent
-    );
-
   z-index: 2;
 
-  font-family: var(--font-head);
-  font-size: 1.1rem;
+  padding: 26px 14px 12px;
+  font-size: .9rem;
+  line-height: 1.3;
+  color: #fff;
+  letter-spacing: .02em;
 
-  color: var(--cream);
-
+  background: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
   pointer-events: none;
 }
 
 /* =========================================
-   TABLET
+   TABLET (up to 900px) — 2 columns
 ========================================= */
-
 @media (max-width: 900px) {
   .ambience__mosaic {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 220px;
-    gap: 15px;
+    --row-h: 160px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+    gap: 12px;
   }
 
-  .ambience__tile.big {
-    grid-column: span 2;
-    grid-row: span 1;
+  .ambience__tile.big  { grid-column: span 2; grid-row: span 1; }
+  .ambience__tile.tall { grid-row: span 2; }
+}
+
+/* =========================================
+   MOBILE (up to 640px)
+========================================= */
+@media (max-width: 640px) {
+  .ambience__mosaic {
+    --row-h: 130px;
+    max-width: 100%;
+    gap: 10px;
+    margin-top: 28px;
   }
 
-  .ambience__tile.tall {
-    grid-row: span 2;
+  .ambience__tile { border-radius: 14px; }
+
+  .ambience__tile figcaption {
+    padding: 22px 10px 9px;
+    font-size: .78rem;
   }
 }
 
 /* =========================================
-   MOBILE
+   SMALL MOBILE (up to 420px) — 1 column
 ========================================= */
-
-@media (max-width: 520px) {
+@media (max-width: 420px) {
   .ambience__mosaic {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 180px;
-    gap: 12px;
+    --row-h: 190px;
+    grid-template-columns: 1fr;
   }
 
-  .ambience__tile.big {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-
+  .ambience__tile.big,
   .ambience__tile.tall {
-    grid-column: span 1;
+    grid-column: auto;
     grid-row: span 1;
   }
-
-  .ambience__tile img {
-    padding: 5px;
-    object-fit: contain;
-  }
-
-  .ambience__tile figcaption {
-    padding: 30px 10px 12px;
-    font-size: 0.9rem;
-  }
 }
 
-/* SMALL MOBILE */
-@media (max-width: 360px) {
-  .ambience__mosaic {
-    grid-auto-rows: 155px;
-    gap: 9px;
-  }
-
-  .ambience__tile figcaption {
-    font-size: 0.8rem;
-  }
-}
-
-/* ACCESSIBILITY */
+/* =========================================
+   REDUCED MOTION
+========================================= */
 @media (prefers-reduced-motion: reduce) {
-  .ambience__tile img {
-    transition: none;
-  }
+  .ambience__tile img { transition: none; }
 }

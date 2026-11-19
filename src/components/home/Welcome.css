@@ -1,7 +1,7 @@
-
 /* =========================================
    THE SMOKE HAUZ — WELCOME SECTION
    PREMIUM VIDEO LAYOUT
+   Sab devices par video ka ratio 4 / 5 (desktop jaisa)
 ========================================= */
 
 /* MAIN GRID */
@@ -41,9 +41,7 @@
 
 .welcome__stat {
   padding: 18px 14px;
-
   text-align: center;
-
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -65,23 +63,21 @@
 
 .welcome__media {
   position: relative;
-
   width: 100%;
   min-width: 0;
-
   padding: 0;
-
   overflow: visible;
 }
 
-/* VIDEO */
 .welcome__video {
   display: block;
+  box-sizing: border-box;
 
   width: 100%;
+  max-width: 100%;
   height: auto;
 
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 5;              /* desktop, tablet, mobile: sab par same */
 
   object-fit: cover;
   object-position: center center;
@@ -90,11 +86,9 @@
   border: 1px solid var(--copper);
 
   margin: 0;
-
   background: var(--ink);
 
-  box-shadow:
-    0 30px 60px -25px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.9);
 
   -webkit-box-reflect:
     below 8px
@@ -118,14 +112,10 @@
   .welcome__grid {
     gap: 40px;
   }
-
-  .welcome__video {
-    aspect-ratio: 4 / 5;
-  }
 }
 
 /* =========================================
-   TABLET
+   TABLET (up to 900px)
 ========================================= */
 
 @media (max-width: 900px) {
@@ -136,19 +126,17 @@
 
   .welcome__media {
     width: 100%;
-    max-width: 650px;
+    max-width: 520px;               /* tablet par bahut bada na ho */
     margin: 0 auto;
   }
 
   .welcome__video {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    max-height: 460px;
+    -webkit-box-reflect: unset;     /* chhoti screen par reflection band */
   }
 }
 
 /* =========================================
-   MOBILE
+   MOBILE (up to 640px)
 ========================================= */
 
 @media (max-width: 640px) {
@@ -181,16 +169,12 @@
   }
 
   .welcome__video {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    max-height: 380px;
-
     border-radius: 18px;
   }
 }
 
 /* =========================================
-   SMALL MOBILE
+   SMALL MOBILE (up to 380px)
 ========================================= */
 
 @media (max-width: 380px) {

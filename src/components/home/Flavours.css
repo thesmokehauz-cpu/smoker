@@ -8,8 +8,9 @@
 /* GRID */
 .flavours__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
+  align-items: start;
 }
 
 /* =========================================
@@ -182,10 +183,12 @@
    TABLET
 ========================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .flavours__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 560px;
+    margin-inline: auto;
   }
 }
 
@@ -195,7 +198,6 @@
 
 @media (max-width: 600px) {
   .flavours__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
 
@@ -221,7 +223,7 @@
   }
 
   .flavour li {
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     padding: 8px 0;
     gap: 7px;
   }
@@ -229,9 +231,6 @@
 
 /* SMALL MOBILE */
 @media (max-width: 360px) {
-  .flavours__grid {
-    gap: 10px;
-  }
 
   .flavour {
     padding: 18px 12px;
@@ -242,7 +241,7 @@
   }
 
   .flavour li {
-    font-size: 0.76rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -254,4 +253,58 @@
   .flavour__bullet {
     transition: none;
   }
+}
+
+/* =========================================
+   COLLECTION EXTRAS (price, tagline, perk)
+========================================= */
+
+.flavour__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.flavour__price {
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.flavour__tag {
+  margin: -8px 0 16px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+/* Classic has 12 flavours, so split it in two columns on wide cards */
+.flavour__list--two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 18px;
+}
+
+.flavour__perk {
+  display: inline-block;
+  margin: 18px 0 0;
+  padding: 8px 14px;
+  border: 1px solid var(--tone);
+  border-radius: 999px;
+  color: var(--tone);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.flavours__more {
+  text-align: center;
+  margin-top: 44px;
+}
+
+@media (max-width: 400px) {
+  .flavour__list--two { grid-template-columns: 1fr; }
 }

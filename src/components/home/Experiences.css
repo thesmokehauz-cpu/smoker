@@ -5,3 +5,6 @@
 .experience__body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
 .experience__who { margin-top: auto; color: var(--copper); font-size: .9rem; font-weight: 600; }
 .experiences__more { text-align: center; margin-top: 44px; }
+.experience__top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
+.experience__top h3 { margin: 0; }
+.experience__price { font-family: var(--font-head); font-size: 1.6rem; line-height: 1; flex-shrink: 0; }

@@ -1,24 +1,26 @@
 /* =========================================
-   THE SMOKE HAUZ — HERO SLIDER (CLEAN)
-   Desktop = same as before
-   Mobile  = full screen cover
+   THE SMOKE HAUZ — HERO SLIDER
+   Desktop (1025px+) = full width, 16:9, koi crop nahi
+   Tablet + Mobile   = image bilkul crop nahi (16:9)
 ========================================= */
 
-/* ---------- HERO ---------- */
 .hero {
+  --hdr-space: 0px;
+
   position: relative;
   width: 100vw;
   max-width: none;
   left: 50%;
   margin-left: -50vw;
 
-  height: 100vh;
-  height: 100svh;
-  min-height: 450px;
+  aspect-ratio: 16 / 9;             /* image ke ratio jaisa, to crop nahi hota */
+  height: auto;
+  min-height: 0;
 
   overflow: hidden;
   isolation: isolate;
   background: #080604;
+  touch-action: pan-y;
 }
 
 /* ---------- SLIDES ---------- */
@@ -42,25 +44,39 @@
   z-index: 1;
 }
 
-/* ---------- IMAGE (desktop: poori image, no crop) ---------- */
+/* Blur backdrop: sirf tablet/mobile par */
+.hero__slide::before {
+  content: '';
+  display: none;
+  position: absolute;
+  inset: -30px;
+  background-image: var(--slide-img);
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px) brightness(.55);
+  transform: scale(1.05);
+}
+
+/* ---------- IMAGE ---------- */
 .hero__bg {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: var(--hdr-space);
   width: 100%;
-  height: 100%;
+  height: calc(100% - var(--hdr-space));
 
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
+  object-fit: cover;                /* hero 16:9 hai, to yahan crop nahi hota */
+  object-position: center center;
 
-  transform: none;
-  transition: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* ---------- ARROWS ---------- */
 .hero__arrow {
   position: absolute;
-  top: 50%;
+  top: calc(50% + (var(--hdr-space) / 2));
   z-index: 10;
   transform: translateY(-50%);
 
@@ -83,6 +99,7 @@
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  -webkit-tap-highlight-color: transparent;
 
   transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
@@ -90,10 +107,12 @@
 .hero__arrow--prev { left: 28px; }
 .hero__arrow--next { right: 28px; }
 
-.hero__arrow:hover {
-  background: #bd7956;
-  border-color: #bd7956;
-  transform: translateY(-50%) scale(1.1);
+@media (hover: hover) {
+  .hero__arrow:hover {
+    background: #bd7956;
+    border-color: #bd7956;
+    transform: translateY(-50%) scale(1.1);
+  }
 }
 
 .hero__arrow:active {
@@ -105,13 +124,47 @@
   outline-offset: 4px;
 }
 
+/* ---------- DOTS ---------- */
+.hero__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.hero__dot.is-active {
+  width: 28px;
+  background: #bd7956;
+}
+
 /* =========================================
-   TABLET (641px – 1024px)
+   TABLET (up to 1024px) — NO CROP
 ========================================= */
-@media (min-width: 641px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .hero {
-    min-height: 550px;
+    --hdr-space: 80px;
+    aspect-ratio: auto;
+    height: calc(var(--hdr-space) + (100vw * 9 / 16));
   }
+
+  .hero__slide::before { display: block; }
+
+  .hero__bg { object-fit: contain; }
 
   .hero__arrow {
     width: 46px;
@@ -124,35 +177,11 @@
 }
 
 /* =========================================
-   MOBILE (up to 640px) — FULL SCREEN COVER
+   MOBILE (up to 640px) — NO CROP
 ========================================= */
 @media (max-width: 640px) {
-  .hero {
-    height: 100vh;
-    height: 100svh;
-    min-height: 480px;
-  }
+  .hero { --hdr-space: 68px; }
 
-  .hero__bg {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .hero__arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .hero__arrow--prev { left: 12px; }
-  .hero__arrow--next { right: 12px; }
-}
-
-/* =========================================
-   SMALL MOBILE (up to 380px)
-========================================= */
-@media (max-width: 380px) {
   .hero__arrow {
     width: 36px;
     height: 36px;
@@ -161,6 +190,26 @@
 
   .hero__arrow--prev { left: 8px; }
   .hero__arrow--next { right: 8px; }
+
+  .hero__dots { bottom: 8px; gap: 7px; }
+  .hero__dot { width: 7px; height: 7px; }
+  .hero__dot.is-active { width: 20px; }
+}
+
+/* =========================================
+   SMALL MOBILE (up to 380px)
+========================================= */
+@media (max-width: 380px) {
+  .hero { --hdr-space: 60px; }
+
+  .hero__arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .hero__arrow--prev { left: 6px; }
+  .hero__arrow--next { right: 6px; }
 }
 
 /* =========================================
@@ -168,36 +217,8 @@
 ========================================= */
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
-  .hero__bg,
-  .hero__arrow {
+  .hero__arrow,
+  .hero__dot {
     transition: none;
   }
-}
-
-/* =========================================
-   MOBILE ONLY — HERO HEIGHT KAM
-   Paste at the VERY END. Desktop unchanged.
-========================================= */
-@media (max-width: 640px) {
-
-  .hero {
-    height: 60vh;        /* fallback */
-    height: 60svh;       /* yahan se height adjust karo */
-    min-height: 320px;
-  }
-
-  .hero__bg {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  .hero__arrow {
-    width: 36px;
-    height: 36px;
-    font-size: 15px;
-  }
-
-  .hero__arrow--prev { left: 8px; }
-  .hero__arrow--next { right: 8px; }
 }

@@ -1,5 +1,5 @@
 
-import video from '../../assets/images/video1.mp4';
+import video from '../../assets/images/video2.mp4';
 import './Welcome.css';
 
 const stats = [
@@ -31,7 +31,7 @@ export default function Welcome() {
           </p>
 
           <p>
-            Come for a quiet coffee and a flavour you like, or bring the
+            Come for a cup of chai and a flavour you like, or bring the
             whole family for a long night. Either way, someone from our
             team will keep your coals fresh.
           </p>

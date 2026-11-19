@@ -3,8 +3,8 @@ import './HowToOrder.css';
 // Real sequence, so numbering is appropriate.
 const steps = [
   { t: 'Sit anywhere that is free', d: 'Pick a sofa that suits your group size.' },
-  { t: 'Tell us your flavour', d: 'Name a flavour, or describe what you like and we will suggest a blend.' },
-  { t: 'Add drinks if you want', d: 'Tea, coffee and cold drinks come from the cafe counter.' },
+  { t: 'Pick your collection', d: 'Choose Classic, Premium or Signature, then tell us your flavour.' },
+  { t: 'Add chai, shakes or bites', d: 'Chai, milkshakes, puffs and desserts come from the cafe counter.' },
   { t: 'Enjoy and ask for fresh coals', d: 'Wave us over any time your hookah needs a refresh.' },
 ];
 

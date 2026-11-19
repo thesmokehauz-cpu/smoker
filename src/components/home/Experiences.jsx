@@ -9,14 +9,17 @@ export default function Experiences() {
         <div className="section-head center">
           <span className="kicker">How you can enjoy it</span>
           <h2>Pick the session that fits your night</h2>
-          <p>From a quiet pot of tea and one hookah to a full table for the family.</p>
+          <p>From simple and smooth to rich and long lasting, there is a collection for every taste.</p>
         </div>
         <div className="grid grid-4">
           {packages.map((p) => (
             <article key={p.id} className="experience card shine">
               <div className="experience__img"><img src={p.img} alt={p.name} loading="lazy" /></div>
               <div className="experience__body">
-                <h3>{p.name}</h3>
+                <div className="experience__top">
+                  <h3>{p.name}</h3>
+                  {p.price && <span className="experience__price copper-text">{p.price}</span>}
+                </div>
                 <p>{p.note}</p>
                 <span className="experience__who">{p.who}</span>
               </div>

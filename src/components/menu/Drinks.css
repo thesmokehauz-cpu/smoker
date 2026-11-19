@@ -1,3 +1,0 @@
-.drink { padding: 28px 24px; position: relative; }
-.drink::before { content: ''; position: absolute; left: 24px; top: 0; width: 46px; height: 3px; background: var(--grad-copper); transition: width .4s ease; }
-.drink:hover::before { width: calc(100% - 48px); }
