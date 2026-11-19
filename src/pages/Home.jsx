@@ -1,5 +1,6 @@
 import HeroSlider from '../components/home/HeroSlider.jsx';
 import Welcome from '../components/home/Welcome.jsx';
+import TableRule from '../components/home/TableRule.jsx';
 import Experiences from '../components/home/Experiences.jsx';
 import Flavours from '../components/home/Flavours.jsx';
 import Ambience from '../components/home/Ambience.jsx';
@@ -10,9 +11,11 @@ export default function Home() {
   return (
     <>
       <HeroSlider />
-      <Welcome />
-      <Experiences />
       <Flavours />
+      
+        <TableRule />
+      <Experiences />
+     <Welcome />
       <Ambience />
       <Reviews />
       <VisitCTA />
