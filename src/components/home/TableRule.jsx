@@ -1,8 +1,16 @@
+
 import './TableRule.css';
 
 const TwoGuestsIcon = () => (
-  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5"
-    strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg
+    viewBox="0 0 64 64"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
     <circle cx="22" cy="22" r="8" />
     <path d="M7 50c0-9 7-15 15-15s15 6 15 15" />
     <circle cx="44" cy="24" r="7" />
@@ -26,29 +34,23 @@ export default function TableRule() {
           </div>
 
           <div className="table-rule__body">
-            <span className="kicker">House etiquette</span>
+            <span className="kicker">House Etiquette</span>
 
             <h2>
-              One hookah,{' '}
-              <span className="copper-text">two guests</span>
+              One Hookah,{' '}
+              <span className="copper-text">Two Guests</span>
             </h2>
 
             <p>
-              To protect the flavour, the airflow and the calm of every table,
-              each hookah is reserved for a maximum of two guests. It is a
-              small rule that keeps every session clean, smooth and
-              unhurried, exactly the way a proper sheesha should be enjoyed.
+              To preserve the flavour, airflow and comfort of every
+              session, each hookah is reserved for a maximum of two
+              guests. This simple rule ensures a clean, smooth and
+              enjoyable sheesha experience every time.
             </p>
 
             <p>
-              Coming with a group? Simply order one hookah for every two
-              guests and settle in together.
-            </p>
-
-            <p className="table-rule__hinglish">
-              Ek hookah, sirf do mehmaan. Har hookah ke saath maximum 2 log
-              allowed hain, taaki flavour, smoke aur hygiene hamesha top-class
-              rahe.
+              Visiting with a group? Simply order one hookah for every
+              two guests and enjoy your session together.
             </p>
 
             <ul className="table-rule__perks">
