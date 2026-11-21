@@ -9,3 +9,10 @@
 .enquiry__form .btn { justify-self: start; }
 @media (max-width: 860px) { .enquiry__grid { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .enquiry__row { grid-template-columns: 1fr; } }
+
+@media (max-width: 640px) {
+  .enquiry__grid { gap: 32px; }
+  .enquiry__form { padding: 22px 16px; gap: 16px; }
+  .enquiry__form .btn { justify-self: stretch; justify-content: center; }
+  .enquiry__form input, .enquiry__form select, .enquiry__form textarea { font-size: 16px; } /* stops iOS zoom */
+}

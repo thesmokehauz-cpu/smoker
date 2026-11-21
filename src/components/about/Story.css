@@ -1,3 +1,5 @@
 .story__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
 .story__img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px; border: 1px solid var(--copper); }
 @media (max-width: 860px) { .story__grid { grid-template-columns: 1fr; gap: 36px; } }
+
+@media (max-width: 640px) { .story__img { aspect-ratio: 16 / 11; } }

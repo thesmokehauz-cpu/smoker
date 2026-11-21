@@ -1,3 +1,5 @@
 .cta-band__box { text-align: center; padding: clamp(40px, 7vw, 80px) 24px; border-radius: 28px; border: 1px solid var(--copper); background: radial-gradient(circle at 50% 0%, rgba(201,130,91,.28), transparent 65%), var(--panel); }
 .cta-band__box p { max-width: 520px; margin-inline: auto; }
 .cta-band__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
+
+@media (max-width: 640px) { .cta-band__box { border-radius: 20px; } .cta-band__actions .btn { flex: 1 1 100%; justify-content: center; } }

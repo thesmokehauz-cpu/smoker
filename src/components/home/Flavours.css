@@ -308,3 +308,5 @@
 @media (max-width: 400px) {
   .flavour__list--two { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 640px) { .flavours__more { margin-top: 30px; } }

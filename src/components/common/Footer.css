@@ -91,3 +91,5 @@
     margin-top: 35px;
   }
 }
+
+@media (max-width: 760px) { .site-footer { padding: 52px 0 20px; text-align: center; } .site-footer__logo { margin-inline: auto; } .site-footer a:hover { transform: none; } .site-footer .site-footer__instagram { margin-inline: auto; } }

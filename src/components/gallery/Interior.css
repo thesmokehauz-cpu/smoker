@@ -1,3 +1,5 @@
 .interior { position: relative; min-height: 70vh; display: flex; align-items: flex-end; background-size: cover; background-position: center; background-attachment: fixed; padding: 80px 0; }
 .interior__inner p { color: var(--sand); max-width: 520px; font-size: 1.15rem; }
 @media (max-width: 900px) { .interior { background-attachment: scroll; } }
+
+@media (max-width: 640px) { .interior { min-height: 56vh; padding: 60px 0 calc(48px + var(--divider-h)); } .interior__inner p { font-size: 1rem; } }

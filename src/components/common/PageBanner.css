@@ -3,3 +3,10 @@
 .page-banner p { font-size: 1.15rem; max-width: 560px; }
 .page-banner__smoke { position: absolute; inset: auto -10% -40% -10%; height: 70%; background: radial-gradient(ellipse at 30% 60%, rgba(241,226,211,.16), transparent 60%), radial-gradient(ellipse at 75% 70%, rgba(201,130,91,.2), transparent 60%); filter: blur(30px); animation: banner-drift 14s ease-in-out infinite alternate; }
 @keyframes banner-drift { to { transform: translateX(6%) translateY(-6%); } }
+
+/* mobile: clearer, shorter banner */
+@media (max-width: 640px) {
+  .page-banner { min-height: 46vh; padding: 118px 0 calc(44px + var(--divider-h)); }
+  .page-banner__inner { margin-inline: auto; width: var(--wrap); max-width: none; }
+  .page-banner p { font-size: 1rem; }
+}

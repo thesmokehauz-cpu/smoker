@@ -3,3 +3,5 @@
 .craft__num { flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font: 400 1.5rem var(--font-head); color: #1a0f08; background: var(--grad-copper); }
 .craft__step p { margin: 0; }
 @media (max-width: 760px) { .craft__list { grid-template-columns: 1fr; } }
+
+@media (max-width: 640px) { .craft__list { gap: 14px; } .craft__step { padding: 18px; gap: 14px; } .craft__num { width: 44px; height: 44px; font-size: 1.25rem; } }

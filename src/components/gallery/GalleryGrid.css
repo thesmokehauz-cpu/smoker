@@ -10,3 +10,11 @@
 .gallery-grid__lightbox img { max-height: 90vh; max-width: 92vw; border-radius: 14px; border: 1px solid var(--copper); }
 .gallery-grid__close { position: absolute; top: 18px; right: 24px; font-size: 2.6rem; line-height: 1; background: none; border: 0; color: var(--rose); cursor: pointer; }
 @keyframes lb-in { from { opacity: 0; } }
+
+.gallery-grid__filters { flex-wrap: wrap; }
+@media (max-width: 640px) {
+  .gallery-grid__filter { padding: 9px 20px; font-size: .95rem; }
+  .gallery-grid__masonry { columns: 2 150px; column-gap: 10px; }
+  .gallery-grid__item { margin-bottom: 10px; }
+  .gallery-grid__close { top: 10px; right: 14px; }
+}

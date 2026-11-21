@@ -1,3 +1,5 @@
 .feature-detail__grid { display: grid; grid-template-columns: .8fr 1fr; gap: 64px; align-items: center; }
 .feature-detail__img { width: 100%; max-width: 440px; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 24px; border: 1px solid var(--copper); margin-inline: auto; }
 @media (max-width: 860px) { .feature-detail__grid { grid-template-columns: 1fr; gap: 36px; } }
+
+@media (max-width: 640px) { .feature-detail__img { max-width: 100%; aspect-ratio: 4 / 5; } }

@@ -1,3 +1,5 @@
 .value { padding: 30px 24px; }
 .value__mark { display: block; width: 38px; height: 38px; margin-bottom: 18px; border-radius: 10px; transform: rotate(45deg); background: var(--grad-copper); transition: transform .5s ease; }
 .value:hover .value__mark { transform: rotate(135deg) scale(1.1); }
+
+@media (max-width: 640px) { .value { padding: 22px 18px; } }

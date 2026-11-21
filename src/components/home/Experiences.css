@@ -8,3 +8,5 @@
 .experience__top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 4px; }
 .experience__top h3 { margin: 0; }
 .experience__price { font-family: var(--font-head); font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+
+@media (max-width: 640px) { .experience__body { padding: 18px; } .experiences__more { margin-top: 30px; } .experience__img { aspect-ratio: 16 / 10; } }

@@ -1,3 +1,5 @@
 .share__box { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; padding: 40px; border: 1px dashed var(--copper); border-radius: 24px; }
 .share__box h2 { margin-bottom: .3em; }
 .share__box p { margin: 0; }
+
+@media (max-width: 640px) { .share__box { padding: 28px 20px; text-align: center; justify-content: center; } }

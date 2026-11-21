@@ -161,7 +161,10 @@
 
 /* ===== Tablet + Mobile: side drawer ===== */
 @media (max-width: 1024px) {
-  .site-header__bar { display: flex; justify-content: space-between; }
+  .site-header__bar { display: flex; justify-content: flex-end; position: relative; min-height: 56px; }
+  /* LOGO CENTER */
+  .site-header__logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); justify-self: center; z-index: 2; }
+  .site-header__right { margin-left: auto; }
   .site-header__burger { display: flex; }
   .site-header__cta--desktop { display: none; }
 

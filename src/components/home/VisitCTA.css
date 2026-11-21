@@ -3,3 +3,5 @@
 .visit__addr { color: var(--sand); }
 .visit__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
 @media (max-width: 860px) { .visit__grid { grid-template-columns: 1fr; gap: 36px; } }
+
+@media (max-width: 640px) { .visit__img { max-width: 300px; } .visit__actions .btn { flex: 1 1 100%; justify-content: center; } }

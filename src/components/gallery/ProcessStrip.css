@@ -3,3 +3,5 @@
 .process-strip__frame:hover img { transform: scale(1.08); }
 .process-strip__frame figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 18px 16px; background: linear-gradient(0deg, rgba(11,9,8,.92), transparent); font-family: var(--font-head); font-size: 1.2rem; z-index: 2; }
 .process-strip__frame { position: relative; }
+
+@media (max-width: 640px) { .process-strip__frame img { aspect-ratio: 4 / 4.2; } .process-strip__frame figcaption { font-size: 1.05rem; padding: 30px 14px 12px; } }

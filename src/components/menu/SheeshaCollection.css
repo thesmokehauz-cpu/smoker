@@ -44,3 +44,8 @@
   .tier__foot > :last-child { margin-left: 0; text-align: center; justify-content: center; }
   .tier__perk { justify-content: center; }
 }
+
+@media (max-width: 640px) {
+  .sheesha__list { gap: 18px; }
+  .tier__head { flex-direction: column; gap: 8px; }
+}
