@@ -57,6 +57,7 @@ export default function EnquiryForm() {
           <Button type="submit">Send on WhatsApp</Button>
         </form>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

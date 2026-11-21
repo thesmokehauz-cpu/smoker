@@ -12,6 +12,7 @@ export default function Story() {
           <p>We chose rich red Arabic fabrics, black steel walls and copper accents so the room feels warm and a little dramatic, whether you drop in at sunset or late at night.</p>
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

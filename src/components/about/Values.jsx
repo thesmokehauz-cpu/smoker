@@ -25,6 +25,7 @@ export default function Values() {
           ))}
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

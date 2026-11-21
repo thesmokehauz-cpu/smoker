@@ -46,6 +46,7 @@ export default function GalleryGrid() {
           <button className="gallery-grid__close" aria-label="Close">&times;</button>
         </div>
       )}
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

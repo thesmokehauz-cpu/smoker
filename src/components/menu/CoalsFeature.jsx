@@ -13,6 +13,7 @@ export default function CoalsFeature() {
           <p>Prefer it lighter or stronger? Say so when you order and we will adjust the bowl.</p>
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

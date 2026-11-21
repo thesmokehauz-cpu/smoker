@@ -9,6 +9,7 @@ export default function PageBanner({ title, text, image }) {
         <p>{text}</p>
       </div>
       <span className="page-banner__smoke" aria-hidden="true" />
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

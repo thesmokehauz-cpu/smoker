@@ -74,6 +74,7 @@ export default function Flavours() {
           <Button to="/menu" variant="ghost">See full menu</Button>
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

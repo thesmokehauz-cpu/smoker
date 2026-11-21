@@ -8,6 +8,7 @@ export default function Interior() {
         <h2 className="copper-text">The whole room, one glance</h2>
         <p>Red majlis sofas on one side, black steel and glowing Sydney art on the other.</p>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

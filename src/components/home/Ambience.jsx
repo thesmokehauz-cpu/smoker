@@ -37,6 +37,7 @@ export default function Ambience() {
         </div>
 
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

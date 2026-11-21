@@ -66,3 +66,16 @@ p { margin: 0 0 1em; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* ===== Section end divider (thin patterned strip) ===== */
+.section-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  z-index: 5;
+  pointer-events: none;
+  background: url('../assets/images/divider.png') repeat-x center / auto 100%;
+}
+@media (max-width: 640px) { .section-divider { height: 8px; } }

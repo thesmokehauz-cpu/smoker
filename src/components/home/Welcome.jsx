@@ -74,6 +74,7 @@ export default function Welcome() {
         </div>
 
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

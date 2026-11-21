@@ -12,6 +12,7 @@ export default function FeatureDetail() {
           <p>Our hookahs are chosen for how they look as much as how they smoke. Fine engraved lines catch the lounge lights and the red anodised rings echo the cushions around you.</p>
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

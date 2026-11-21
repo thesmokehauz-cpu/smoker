@@ -24,6 +24,7 @@ export default function ProcessStrip() {
           ))}
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

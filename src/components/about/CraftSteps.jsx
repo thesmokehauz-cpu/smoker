@@ -25,6 +25,7 @@ export default function CraftSteps() {
           ))}
         </ol>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

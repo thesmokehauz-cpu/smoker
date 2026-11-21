@@ -26,6 +26,7 @@ export default function HowToOrder() {
           ))}
         </ol>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

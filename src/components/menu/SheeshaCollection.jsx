@@ -53,6 +53,7 @@ export default function SheeshaCollection() {
           ))}
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

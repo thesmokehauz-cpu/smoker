@@ -33,6 +33,7 @@ export default function CafeMenu() {
           ))}
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

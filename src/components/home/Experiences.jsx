@@ -28,6 +28,7 @@ export default function Experiences() {
         </div>
         <div className="experiences__more"><Button to="/menu" variant="ghost">See full menu</Button></div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

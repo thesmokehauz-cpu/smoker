@@ -12,6 +12,7 @@ export default function ShareMoment() {
         </div>
         <Button href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent('Hi, I would like to share a photo from The Smoke Hauz.')}`}>Send a photo</Button>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

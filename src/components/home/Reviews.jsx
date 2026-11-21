@@ -116,6 +116,7 @@ export default function Reviews() {
         </div>
 
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

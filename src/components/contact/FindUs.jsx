@@ -17,6 +17,7 @@ export default function FindUs() {
             src={`https://www.google.com/maps?q=${encodeURIComponent(business.mapQuery)}&output=embed`} />
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

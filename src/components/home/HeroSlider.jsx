@@ -103,6 +103,7 @@ export default function HeroSlider() {
           />
         ))}
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

@@ -18,6 +18,7 @@ export default function LoungeFeatures() {
           <img src={images.hookahDetail} alt="Engraved steel hookah stem with red accents and rising smoke" loading="lazy" className="shine" />
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }

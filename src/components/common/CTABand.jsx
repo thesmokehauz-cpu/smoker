@@ -15,6 +15,7 @@ export default function CTABand({ title = 'Your table is waiting', text = 'Send 
           <Button to="/contact" variant="ghost">Get directions</Button>
         </div>
       </div>
+      <div className="section-divider" aria-hidden="true" />
     </section>
   );
 }
